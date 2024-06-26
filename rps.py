@@ -1,4 +1,4 @@
-# Play command line Rock-Paper-Scissors
+# Play command line Rock-Paper-Scissors, 3 game tournament
 # by Krisha
 import random
 
@@ -12,16 +12,19 @@ i = 3
 
 while i > 0:
 
+    # winner found so breaks
     if userwins == 2 or compwins == 2:
         break
 
+    # get computer's choice
     options = ["rock", "paper", "scissors"]
     computer = str(random.choice(options))
 
-    user = input("Choose rock, paper, or scissors?: ")
+    user = input("Choose rock, paper, or scissors?: ") #get player's choice
 
     print("player 2 choice: " + computer)
 
+    # checks who won & adds 1 pt for winner
     if user == computer:
         print("draw")
     elif user == "paper" and computer == "rock":
@@ -39,7 +42,9 @@ while i > 0:
         compwins += 1
     i += 1
 
+#if one side wins twice, they win the 3-game tournament
+# otherwise continues to 3rd game bc the players drawed once --> then one player accumulates 2 pts
 if userwins == 2:
-    print("You win the tournament!")
+    print("You win the 3-game tournament!")
 elif compwins == 2:
-    print("Computer wins the tournament")
+    print("Computer wins the 3-game tournament")
